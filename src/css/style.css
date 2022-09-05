@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(8, 8, 34, 0.87);
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 75px 75px 75px 75px 75px 75px 75px 75px;
+  grid-template-rows: 75px 75px 75px 75px 75px 75px 75px 75px;
+  backdrop-filter: blur(10px);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 10px 5px 20px rgba(255, 255, 255, 0.5);
+  z-index: 2000;
+  overflow: hidden;
+}
+.container .cell {
+  position: relative;
+  display: grid;
+  color: white;
+  place-items: center;
+  background-color: transparent;
+  box-shadow: inset 0px 0px 5px rgba(8, 8, 34, 0.87);
+}
+.container .odd:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.6);
+}
+.container .even:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.6);
+}
+.container .cell:hover {
+  background-color: rgba(168, 252, 252, 0.8);
+  box-shadow: 0px 0px 10px rgba(168, 252, 252, 0.8);
+}
+
+/*# sourceMappingURL=style.css.map */
