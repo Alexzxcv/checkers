@@ -31,6 +31,13 @@ body {
   place-items: center;
   background-color: transparent;
   box-shadow: inset 0px 0px 5px rgba(8, 8, 34, 0.87);
+  transition: 0.3s;
+}
+.container .cell img {
+  width: 60px;
+  height: 60px;
+  box-shadow: 0px 0px 5px #ebf784;
+  border-radius: 50%;
 }
 .container .odd:nth-child(odd) {
   background-color: rgba(255, 255, 255, 0.1);
@@ -43,6 +50,8 @@ body {
 .container .cell:hover {
   background-color: rgba(168, 252, 252, 0.8);
   box-shadow: 0px 0px 10px rgba(168, 252, 252, 0.8);
+  transition: 0.1s;
+  z-index: 4000;
 }
 
 /*# sourceMappingURL=style.css.map */
