@@ -15,19 +15,22 @@ body {
 .container {
   position: relative;
   display: grid;
-  grid-template-columns: 75px 75px 75px 75px 75px 75px 75px 75px;
-  grid-template-rows: 75px 75px 75px 75px 75px 75px 75px 75px;
+  height: 400px;
+  width: 400px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   backdrop-filter: blur(10px);
   border-top: 2px solid rgba(255, 255, 255, 0.2);
   border-left: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 10px 5px 20px rgba(255, 255, 255, 0.5);
-  z-index: 2000;
   overflow: hidden;
 }
 .container .cell {
   user-select: none;
   position: relative;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   place-items: center;
   background-color: transparent;
@@ -36,10 +39,11 @@ body {
 }
 .container .cell img {
   user-select: none;
-  width: 60px;
-  height: 60px;
+  width: 70%;
+  height: 70%;
   box-shadow: 0px 0px 5px #ebf784;
   border-radius: 50%;
+  z-index: 5000;
 }
 .container .odd:nth-child(odd) {
   background-color: rgba(255, 255, 255, 0.1);
@@ -53,7 +57,6 @@ body {
   background-color: rgba(168, 252, 252, 0.8);
   box-shadow: 0px 0px 10px rgba(168, 252, 252, 0.8);
   transition: 0.1s;
-  z-index: 4000;
 }
 
 /*# sourceMappingURL=style.css.map */
