@@ -37,6 +37,11 @@ body {
   box-shadow: inset 0px 0px 5px rgba(8, 8, 34, 0.87);
   transition: 0.3s;
 }
+.container .cell:hover {
+  background-color: rgba(168, 252, 252, 0.8);
+  box-shadow: 0px 0px 10px rgba(168, 252, 252, 0.8);
+  transition: 0.1s;
+}
 .container .cell img {
   user-select: none;
   width: 70%;
@@ -52,11 +57,6 @@ body {
 .container .even:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.6);
-}
-.container .cell:hover {
-  background-color: rgba(168, 252, 252, 0.8);
-  box-shadow: 0px 0px 10px rgba(168, 252, 252, 0.8);
-  transition: 0.1s;
 }
 
 /*# sourceMappingURL=style.css.map */

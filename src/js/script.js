@@ -30,13 +30,15 @@ function createFigure() {
     let countId = 0;
     let countRow = 1;
 
+    const place = (id, color) => $(`#c${id}`).append(`<img id=f${id} src=img/${color}1.png>`);
+
     for (let i = 1; i < 4; i++) {
         for (let j = 1; j < 9; j++) {
             if ((j % 2 == 0) && (countRow % 2 !== 0) && (countRow < 4)) {
-                $(`#c${countId}`).append(`<img id=f${countId} src=img/black1.png>`);
+                place(countId, 'black');
             }
             else if ((j % 2 !== 0) && (countRow % 2 == 0) && (countRow < 4)) {
-                $(`#c${countId}`).append(`<img id=f${countId} src=img/black1.png>`);
+                place(countId, 'black');
             }
             countId++;
         }
@@ -49,11 +51,10 @@ function createFigure() {
     for (let i = 6; i < 9; i++) {
         for (let j = 1; j < 9; j++) {
             if ((j % 2 == 0) && (countRow % 2 !== 0) && (countRow > 5)) {
-                $(`#c${countId}`).append(`<img id=f${countId} src=img/white1.png>`);
+                place(countId, 'white');
             }
             else if ((j % 2 !== 0) && (countRow % 2 == 0) && (countRow > 5)) {
-                $(`#c${countId}`).append(`<img id=f${countId} src=img/white1.png>`);
-
+                place(countId, 'white');
             }
             countId++;
         }
@@ -68,8 +69,9 @@ function setDraggable() {
 function setDroppable() {
     $('.cell').droppable({
         drop: function (e, ui) {
-            let fromCoord = ui.draggable.attr('id');
-            let toCoord = this.id;
+            const fromCoord = ui.draggable.attr('id');
+            const toCoord = this.id;
+            console.log(fromCoord)
             moveFigure(fromCoord, toCoord);
         }
     });
@@ -77,6 +79,9 @@ function setDroppable() {
 
 function moveFigure (fromCoord, toCoord) {
     console.log('move from ' + fromCoord + ' to ' + toCoord);
-    $(`#${toCoord}`).replaceWith(`#${fromCoord}`);
-    // setDraggable();
+    const fromEl = document.getElementById(fromCoord);
+    const toEl = document.getElementById(toCoord);
+    fromEl.style.inset = 0;
+    toEl.append( fromEl);
+    setDraggable();
 }
